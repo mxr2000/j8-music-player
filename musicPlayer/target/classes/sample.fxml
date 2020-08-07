@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="600" nodeOrientation="LEFT_TO_RIGHT" prefHeight="720.0" prefWidth="1047.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainController">
+   <top>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem fx:id="menuItemAddList" mnemonicParsing="false" onAction="#onAddListAction" text="Add List" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+      </VBox>
+   </top>
+   <bottom>
+      <HBox alignment="CENTER" prefWidth="200.0" spacing="5.0" style="-fx-border-color: cyan; -fx-border-radius: 10; -fx-border-insets: 10; -fx-border-width: 4;" BorderPane.alignment="CENTER">
+         <children>
+             <Button fx:id="btnPlayPause" maxHeight="46.0" maxWidth="46.0" minHeight="46.0" minWidth="40.0" mnemonicParsing="false" onMouseClicked="#onBtnPlayPauseClicked" prefHeight="46.0" prefWidth="46.0">
+                 <graphic>
+                     <ImageView fx:id="imgPlayPause" onMouseClicked="#onBtnPlayPauseClicked">
+                     <image>
+                        <Image url="@images/play.png" />
+                     </image></ImageView>
+                 </graphic>
+             </Button>
+            <Button fx:id="btnStop" maxHeight="46.0" maxWidth="46.0" minHeight="46.0" minWidth="46.0" mnemonicParsing="false" onAction="#onBtnStopClicked" prefHeight="46.0" prefWidth="46.0">
+               <graphic>
+                  <ImageView fx:id="imgStop">
+                     <image>
+                        <Image url="@images/stop.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+             <Button fx:id="btnNext" maxHeight="46.0" maxWidth="46.0" minHeight="46.0" minWidth="46.0" mnemonicParsing="false" onAction="#onBtnNextClicked" prefHeight="46.0" prefWidth="46.0">
+                 <graphic>
+                     <ImageView fx:id="imgNext">
+                         <image>
+                             <Image url="@images/next.png" />
+                         </image>
+                     </ImageView>
+                 </graphic>
+             </Button>
+            <Label fx:id="lbTime" text="0:00/5:21" />
+            <Slider fx:id="sliderTime" HBox.hgrow="ALWAYS" />
+            <Button fx:id="btnVolume" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onBtnVolumeClicked" style="-fx-background-color: transparent;">
+                <graphic>
+                    <ImageView fx:id="imgVolume">
+                        <image>
+                            <Image url="@images/volume.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Slider fx:id="sliderVolume" value="500.0" />
+         </children>
+         <effect>
+            <Blend />
+         </effect>
+         <padding>
+            <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+         </padding>
+      </HBox>
+   </bottom>
+    <left>
+        <TreeView fx:id="treeList" prefHeight="558.0" prefWidth="280.0">
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin></TreeView>
+    </left>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <center>
+      <GridPane prefHeight="553.0" prefWidth="655.0" vgap="10.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="NEVER" />
+            <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <ImageView fx:id="imgCover" fitHeight="334.0" fitWidth="371.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER">
+               <image>
+                  <Image url="@../../../a.jpeg" />
+               </image>
+            </ImageView>
+            <ListView fx:id="listViewMusicInfo" prefHeight="155.0" prefWidth="727.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" />
+            <VBox alignment="TOP_CENTER" prefHeight="70.0" prefWidth="727.0" GridPane.rowIndex="1" GridPane.vgrow="NEVER">
+               <children>
+                  <Label fx:id="lbSongName" text="The name of the song" textAlignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI Semibold" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbSongAlbum" text="The album of the song">
+                     <font>
+                        <Font name="Times New Roman Bold" size="25.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+      </GridPane>
+   </center>
+</BorderPane>

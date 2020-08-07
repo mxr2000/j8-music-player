@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="237.0" prefWidth="581.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DialogAddListController">
+  <tabs>
+    <Tab text="Add songs">
+         <content>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <TitledPane prefHeight="207.0" prefWidth="237.0" text="Items to be added">
+                     <content>
+                        <VBox alignment="CENTER" prefHeight="240.0" prefWidth="167.0">
+                           <children>
+                              <Button fx:id="btnAddItem" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onBtnAddItemClicked" text="From file..." textAlignment="CENTER" VBox.vgrow="NEVER" />
+                              <ListView fx:id="listItemsToBeAdded" prefHeight="200.0" prefWidth="55.0" />
+                           </children>
+                        </VBox>
+                     </content>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </TitledPane>
+                  <GridPane style="-fx-border-color: blue; -fx-border-radius: 10; -fx-border-insets: 10;" vgap="10.0" HBox.hgrow="ALWAYS">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="NEVER" maxWidth="123.0" minWidth="10.0" prefWidth="112.0" />
+                      <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="88.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Towards" />
+                        <RadioButton fx:id="rbListToCurrent" mnemonicParsing="false" text="To current" GridPane.rowIndex="1" />
+                        <RadioButton fx:id="rbListToANew" mnemonicParsing="false" text="to a new " GridPane.rowIndex="2" />
+                        <ComboBox fx:id="cbItemCurrentLists" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="133.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <HBox maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2">
+                           <children>
+                              <TextField fx:id="tfItemNewListName" maxWidth="1.7976931348623157E308" />
+                              <Button fx:id="btnListNewList" mnemonicParsing="false" text="..." />
+                           </children>
+                        </HBox>
+                        <Button fx:id="btnImportItem" mnemonicParsing="false" onAction="#onBtnImportItemClicked" text="import" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </GridPane>
+               </children>
+            </HBox>
+         </content></Tab>
+    <Tab text="Import path">
+         <content>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <TitledPane prefHeight="198.0" prefWidth="175.0">
+                     <content>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Button fx:id="btnAddPath" mnemonicParsing="false" text="Button" />
+                              <ListView fx:id="listPathsToBeAdded" prefHeight="200.0" prefWidth="200.0" />
+                           </children>
+                        </VBox>
+                     </content>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </TitledPane>
+                  <GridPane style="-fx-border-color: green; -fx-border-insets: 10; -fx-border-radius: 10;" vgap="10.0" HBox.hgrow="ALWAYS">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="NEVER" maxWidth="137.0" minWidth="10.0" prefWidth="136.0" />
+                      <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="64.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Label" />
+                        <RadioButton fx:id="rbPathToCurrent" mnemonicParsing="false" text="To current" GridPane.rowIndex="1" />
+                        <RadioButton fx:id="rbPathToANew" mnemonicParsing="false" text="To a new" GridPane.rowIndex="2" />
+                        <Button fx:id="btnImportPath" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <ComboBox fx:id="cbPathCurrentLists" maxWidth="1.7976931348623157E308" prefWidth="150.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
+                        <HBox maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <children>
+                              <TextField fx:id="tfPathNewListName" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                              <Button fx:id="btnPathNewList" mnemonicParsing="false" text="..." />
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </GridPane>
+               </children>
+            </HBox>
+         </content>
+    </Tab>
+  </tabs>
+</TabPane>
